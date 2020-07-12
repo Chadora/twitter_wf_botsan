@@ -1,0 +1,14 @@
+{
+    "name": "nakashima/twitterbot",
+    "authors": [
+        {
+            "name": "Chadora",
+            "email": "linecloud.weightlessness.world@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.5",
+        "abraham/twitteroauth": "^1.1",
+        "vlucas/phpdotenv": "^5.0"
+    }
+}

@@ -4,18 +4,18 @@ use GuzzleHttp\Client;
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Dotenv\Dotenv;
 
-//  環境変数読み込み 
+//  環境変数を読み込みます 
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+// 天気情報APIを取得します
 function get_weather_json()
 {
 
     $client = new Client([
         'base_uri' => 'http://weather.livedoor.com/forecast/webservice/json/v1'
     ]);
-// city 情報を奈良に変更(2020.6.22)
     $method = 'GET';
     $uri = '?city=290010';
     $options = [];
@@ -41,13 +41,17 @@ function post_twitter($message)
     $res_body = $connection->getLastBody(); var_dump($res_body);
 }
 
+// 取得した天気情報のファイルにある必要な情報を、それぞれを変数に代入
 
 $weather_json = get_weather_json();
 $location = $weather_json["location"]["city"];
 $day = $weather_json["forecasts"][0]["dateLabel"];
 $weather = $weather_json["forecasts"][0]["telop"];
-// 
+
+// 代入した変数を併せた定型文を作成
 $tweet_message = "{$location}の{$day}は{$weather}です。tweeted by wf_botsan";
+
+// ツイートを投稿
 
 post_twitter($tweet_message);
 

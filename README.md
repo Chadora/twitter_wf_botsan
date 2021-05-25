@@ -1,6 +1,6 @@
 # wf_botsanについて
 
-###　概要
+### 概要
 PHPの学習過程で内容理解の確認と練習、またポートフォリオとして公開することを兼ねて作成したTwitterBOTです。
 
 コンソール上でphpファイルを実行することで、指定した地域の天気情報をAPI連携したtwitterアカウントからツイートすることができます。
@@ -35,7 +35,7 @@ PHPの学習過程で内容理解の確認と練習、またポートフォリ�
 - Composer(1.1.0)
 - symphony
 
-####　使用したライブラリ一覧
+#### 使用したライブラリ一覧
 - abraham/TwitterOAuth(1.1.0)
 - graham-campbell/Result-type(v1.0.1)
 - guzzlehttp(6.5.3)
